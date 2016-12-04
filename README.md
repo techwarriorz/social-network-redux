@@ -4,8 +4,10 @@ This is a companion repository for our coding series https://www.youtube.com/pla
 # Installation
 To install the contents simply run the following commands in the terminal/command prompt.
 
-npm install
-npm start
+- npm install
+- Change line 2 of database/database.js to the URL of your Postgres Database
+- npm start
+
 
 # Support TechWarriorz
 Right now, Techwarriorz needs your help... we are trying to get to 10k subscribers on youtube, so that we can increase the quality of our productions... as it will grant us access into youtube studios. If you find our code/tutorials helpful... please subscribe to us on Youtube. https://www.youtube.com/channel/UC3q_EhMMzZkC3Z8XE0MIf7g
