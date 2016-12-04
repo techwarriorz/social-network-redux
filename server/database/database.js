@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var yourDB; //Set this to the URL to your database
+var yourDB = "Your Postgres Database";
 var sequelize = new Sequelize(yourDB, {
     dialect: 'postgres',
     dialectOptions: {

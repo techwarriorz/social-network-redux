@@ -1,3 +1,46 @@
 <div>
-    This is the page that will change all pages....!
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h3>User Friends</h3>
+            <ul>
+                <li ng-repeat="friend in userFriends">
+                    {{friend.username}}
+                </li>
+            </ul>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h3>Users to Add</h3>
+            <ul>
+                <li ng-repeat="user in users">
+                    {{user.username}} <button ng-click="addUser(user.id)">Add</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h3>Friend Requests</h3>
+            <ul>
+                <li ng-repeat="request in friendRequests">
+                    {{request.username}} <button ng-click="respondToRequest(request.id, 'confirmed')"> Accept </button> <button ng-click="respondToRequest(request.id)"> Decline </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="row text-center">
+        <h3>Update Your Status</h3>
+        <textarea ng-model="newPost"></textarea> <br/>
+        <button ng-click="submitPost(newPost)">Submit Post</button>
+        
+        <h3>Here is what your friends are talking about</h3>
+        <ul>
+            <li ng-repeat="post in friendPosts">
+                <strong>{{post.username}}:</strong> 
+                <p>{{post.post_content}}</p>
+            </li>
+        </ul>
+    </div>
 </div>

@@ -22,7 +22,7 @@ router.use(function(req,res,next){
 
 //GET ENDPOINTS
 router.get('/get_friends', function(req, res){
-    var query = "SELECT * FROM user_friends WHERE user_id=" + req.user_id;
+    var query = "SELECT friend.friend_id, friend.date_friended, u.username, u.display_name FROM user_friends friend INNER JOIN users u ON(u.id = friend.friend_id) WHERE user_id=" + req.user_id;
     db.query(query).spread(function(result, metadata){
         res.json({
             data: result
@@ -33,7 +33,7 @@ router.get('/get_friends', function(req, res){
 });
 router.get('/get_friend_requests', function(req, res){
     console.log("this is the user's ID " + req.user_id);
-    var query = "SELECT * FROM user_friend_requests WHERE received_id=" + req.user_id + " AND status='pending'";
+    var query = "SELECT request.id, u.username, u.display_name FROM user_friend_requests request INNER JOIN users u ON (u.id = request.received_id) WHERE u.id=" + req.user_id + " AND status='pending'";
     
     db.query(query).spread(function(result, metadata){
         res.json({

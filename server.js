@@ -16,8 +16,10 @@ var userController = require('./server/controllers/user-controller');
 
 //Routers
 var secureUserRouter = require('./server/routes/user');
+var securePostRouter = require('./server/routes/post');
 
 app.use('/secure-api/user/', secureUserRouter);
+app.use('/secure-api/post/', securePostRouter);
 
 //Routes
 app.get('/', function(req, res){
