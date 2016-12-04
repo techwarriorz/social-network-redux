@@ -1,0 +1,25 @@
+<div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+        <h3>Enter a Username</h3>
+        <input type="text" ng-model="newUser.username" maxlength="40"/>
+        
+        <h3>Enter Your Email</h3>
+        <input type="email" ng-model="newUser.email"/>
+        
+        <h3>Select Your Password</h3>
+        <input type="password" ng-model="newUser.user_password" /> <br>
+        
+        <button ng-click="createUser(newUser)">Create My User</button>
+    </div>
+    
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+        <h3>Your Username or Email</h3>
+        <input type="text" ng-model="existingUser.loginName" />
+        
+        <h3>Your Password</h3>
+        <input type="password" ng-model="existingUser.password" /> <br>
+        
+        <button ng-click="logUserIn(existingUser)">Log Me In Chief</button>
+    </div>
+    
+</div>

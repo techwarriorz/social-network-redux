@@ -1,0 +1,16 @@
+{
+  "name": "timeWasteRedux",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server"  
+  },
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.27.0"
+  }
+}
