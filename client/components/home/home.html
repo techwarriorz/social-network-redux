@@ -1,25 +1,36 @@
 <div>
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
-        <h3>Enter a Username</h3>
-        <input type="text" ng-model="newUser.username" maxlength="40"/>
+    
+    <h1 class="section-title text-center"> Welcome to Social Alternative</h1>
+    <h4 class="text-center">Welcome to the newest social network, dedicated to free speech!</h4>
+    <div class="col-lg-6  col-md-6 col-sm-6 col-xs-12 text-center">
+        <div class="landing-panel center-block">
+            <h3 class="section-title">Sign-Up</h3>
+            
+            <h3>Enter a Username</h3>
+            <input type="text" ng-model="newUser.username" maxlength="40"/>
         
-        <h3>Enter Your Email</h3>
-        <input type="email" ng-model="newUser.email"/>
+            <h3>Enter Your Email</h3>
+            <input type="email" ng-model="newUser.email"/>
         
-        <h3>Select Your Password</h3>
-        <input type="password" ng-model="newUser.user_password" /> <br>
+            <h3>Select Your Password</h3>
+            <input type="password" ng-model="newUser.user_password" /> <br>
         
-        <button ng-click="createUser(newUser)">Create My User</button>
+            <button class="cta-button" ng-click="createUser(newUser)">Create My User</button>
+        </div>
+        
     </div>
     
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
-        <h3>Your Username or Email</h3>
-        <input type="text" ng-model="existingUser.loginName" />
+    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+        <div class="landing-panel center-block">
+            <h3 class="section-title">Have an account? Login!</h3>
+            <h3>Your Username or Email</h3>
+            <input type="text" ng-model="existingUser.loginName" />
         
-        <h3>Your Password</h3>
-        <input type="password" ng-model="existingUser.password" /> <br>
+            <h3>Your Password</h3>
+            <input type="password" ng-model="existingUser.password" /> <br>
         
-        <button ng-click="logUserIn(existingUser)">Log Me In Chief</button>
+            <button class="cta-button" ng-click="logUserIn(existingUser)">Log Me In Chief</button>
+        </div>
     </div>
     
 </div>

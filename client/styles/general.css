@@ -1,0 +1,21 @@
+/* Global Styles */
+body {
+    background-color: #774A8E;
+    font-family: 'Fira Sans', sans-serif;
+    padding-top: 50px;
+}
+
+input,
+textarea{
+    color: #000;
+}
+
+.section-title {
+    font-family: 'Bungee'
+}
+
+
+/* margin-overwrites */
+.mt10 {
+    margin-top: 10px !important;
+}

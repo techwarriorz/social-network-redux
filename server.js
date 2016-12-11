@@ -31,6 +31,6 @@ app.post('/api/user/login', userController.logIn);
 
 db.sync().then(function(){
     app.listen(3000, function(){
-        console.log("It works silly silly goose");
+        console.log("Listening to port " + 3000);
     })
 })

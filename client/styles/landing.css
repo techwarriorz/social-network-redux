@@ -1,0 +1,13 @@
+/* Landing Page Styling */
+
+.landing-panel {
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: #9874AA;
+    max-width: 300px;
+    min-height: 200px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: #fff;
+    margin-top: 20px;
+}

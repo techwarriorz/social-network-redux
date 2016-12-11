@@ -1,46 +1,91 @@
 <div>
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <h3>User Friends</h3>
-            <ul>
-                <li ng-repeat="friend in userFriends">
-                    {{friend.username}}
-                </li>
-            </ul>
+    
+    <top-nav></top-nav>
+    <div class="main-left-section">
+        <div class="main-left-user text-center">
+            <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i>
+            <h5 class="section-title">View Your Profile</h5>
         </div>
         
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <h3>Users to Add</h3>
-            <ul>
-                <li ng-repeat="user in users">
-                    {{user.username}} <button ng-click="addUser(user.id)">Add</button>
-                </li>
-            </ul>
+        <div class="main-left-friends"
+             ng-show="userFriends.length > 0">
+        <h5 class="section-title text-center">Your Friends</h5>
+            
+            <div class="main-left-friend-scroll">
+                <ul class="main-friend-list">
+                    <li ng-repeat="friend in userFriends">
+                       <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{friend.username}}
+                    </li>
+                </ul>
+            </div>
+            
         </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <h3>Friend Requests</h3>
-            <ul>
+        
+    </div>   
+    <div class="main-right-section"> 
+        
+        <div class="main-right-requests"
+             ng-show="friendRequests.length > 0">
+            <h5 class="section-title text-center">Friend Requests</h5>
+            <ul class="main-friend-requests">
                 <li ng-repeat="request in friendRequests">
-                    {{request.username}} <button ng-click="respondToRequest(request.id, 'confirmed')"> Accept </button> <button ng-click="respondToRequest(request.id)"> Decline </button>
+                     <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{request.username}} 
+                    <button class="add-user-right-button"
+                            ng-click="respondToRequest(request.id, 'confirmed')"> 
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </button> 
+                    
+                    <button class="decline-user-right-button"
+                            ng-click="respondToRequest(request.id)">
+                        <i class="fa fa-times-circle" aria-hidden="true"></i>
+                    </button>
+                    
                 </li>
             </ul>
         </div>
-    </div>
-    
-    <div class="row text-center">
-        <h3>Update Your Status</h3>
-        <textarea ng-model="newPost"></textarea> <br/>
-        <button ng-click="submitPost(newPost)">Submit Post</button>
         
-        <h3>Here is what your friends are talking about</h3>
-        <ul>
-            <li ng-repeat="post in friendPosts">
-                <strong>{{post.username}}:</strong> 
-                <p>{{post.post_content}}</p>
-            </li>
-        </ul>
+        <div class="main-right-follow"
+             ng-show="users.length > 0">
+            
+            <h5 class="section-title text-center">Users to Add</h5>
+            <ul class="main-friend-list text-left">
+                <li ng-repeat="user in users">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i> {{user.username}} 
+                    <button class="add-user-right-button"
+                            ng-click="addUser(user.id)">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+        
     </div>
+
+ 
+    
+    <div class="statuses-section text-center">
+        <h3 class="section-title">Update Your Status</h3>
+        
+        <textarea ng-model="newPost"></textarea> <br/>
+        
+        <button class="cta-button mt10"
+                ng-click="submitPost(newPost)">
+            Submit Post
+        </button>
+        
+        <h3 class="section-title">Here is what your friends are talking about</h3>
+        
+        <div class="status-post center-block"
+             ng-repeat="post in friendPosts">
+            <strong>{{post.username}}</strong> <br/>
+            <i class="fa fa-user-circle-o fa-3x" aria-hidden="true"></i><br/>
+            
+                <p>{{post.post_content}}</p>
+        </div>
+        
+                
+       
+    </div>
+
+
 </div>
